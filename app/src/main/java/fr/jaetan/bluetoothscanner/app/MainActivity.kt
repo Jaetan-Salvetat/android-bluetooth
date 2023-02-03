@@ -21,6 +21,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.core.app.ActivityCompat
 import fr.jaetan.bluetoothscanner.app.ui.theme.BluetoothScannerTheme
 import fr.jaetan.bluetoothscanner.core.services.BluetoothService
+import fr.jaetan.bluetoothscanner.core.services.MainService
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,8 +69,8 @@ class MainActivity : ComponentActivity() {
         val launcher = rememberLauncherForActivityResult(
             ActivityResultContracts.RequestMultiplePermissions()
         ) {
-            BluetoothService.init(context)
-            BluetoothService.instance.scan(activity, coroutineScope)
+            MainService.init(context)
+            MainService.bluetoothService.scan(activity, coroutineScope)
         }
 
 

@@ -20,7 +20,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import fr.jaetan.bluetoothscanner.core.services.BluetoothService
 import fr.jaetan.bluetoothscanner.core.services.MainService
 
 @RequiresPermission(value = "android.permission.BLUETOOTH_CONNECT")
@@ -81,7 +80,7 @@ private fun Fab(activity: Activity) {
     val coroutineScope = rememberCoroutineScope()
 
     ElevatedButton(
-        onClick = { BluetoothService.instance.scan(activity, coroutineScope) },
+        onClick = { MainService.bluetoothService.scan(activity, coroutineScope) },
         shape = RoundedCornerShape(15.dp),
         modifier = Modifier.size(60.dp),
         contentPadding = PaddingValues(0.dp),

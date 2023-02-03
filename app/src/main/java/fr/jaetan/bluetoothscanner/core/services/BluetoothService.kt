@@ -43,11 +43,6 @@ class BluetoothService(context: Context) {
     }
 
     companion object {
-        lateinit var instance: BluetoothService
-
-        fun init(context: Context) {
-            instance = BluetoothService(context)
-        }
 
         val receiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
