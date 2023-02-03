@@ -36,7 +36,7 @@ class BluetoothService(context: Context) {
                 addDevice(device)
             }
 
-            delay(3000)
+            delay(5000)
             bluetoothAdapter?.cancelDiscovery()
             MainService.state.isSearchEnabled = true
         }
